@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diana Kozlovska — Personal Website & Research Portfolio</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Space Mono & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Space Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #1a1a1a;
+        }
+
+        .mono-font {
+            font-family: 'Space Mono', monospace;
+        }
+
+        /* Hero background using your raw image with zero dark filters or gray overlays */
+        .hero-bg-raw {
+            background-image: url('IMG_5535.jpg');
+            background-size: cover;
+            background-position: center 35%;
+            background-repeat: no-repeat;
+            background-color: transparent;
+            filter: none !important;
+            -webkit-filter: none !important;
+        }
+
+        /* High-contrast text drop shadow so white text remains crisp over light background areas */
+        .crisp-text-shadow {
+            color: #ffffff;
+            text-shadow: 
+                0 3px 12px rgba(0, 0, 0, 0.95),
+                0 1px 3px rgba(0, 0, 0, 0.9),
+                0 0 25px rgba(0, 0, 0, 0.8);
+        }
+
+        .nav-text-shadow {
+            color: #ffffff;
+            text-shadow: 
+                0 2px 8px rgba(0, 0, 0, 0.9),
+                0 0 12px rgba(0, 0, 0, 0.8);
+        }
+
+        /* Typewriter Cursor animation */
+        .typewriter-cursor::after {
+            content: '|';
+            animation: blink 0.9s step-start infinite;
+            font-weight: 400;
+            margin-left: 2px;
+            color: #ffffff;
+            text-shadow: 0 0 10px rgba(0,0,0,0.9);
+        }
+
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+    </style>
+</head>
+<body class="bg-white text-slate-900 antialiased selection:bg-slate-200">
+
+    <!-- Top Navigation Bar -->
+    <header class="absolute top-0 left-0 w-full z-20 py-6 px-6 sm:px-12">
+        <div class="max-w-5xl mx-auto flex justify-between items-center">
+            <a href="#home" class="mono-font text-xs sm:text-sm tracking-wider uppercase nav-text-shadow font-bold">
+                Diana Kozlovska
+            </a>
+            <nav class="flex items-center space-x-6 sm:space-x-8 mono-font text-xs sm:text-sm tracking-wide font-medium nav-text-shadow">
+                <a href="#about" class="hover:underline opacity-100">01 : Home</a>
+                <a href="#research" class="hover:underline opacity-100">02 : Research</a>
+                <a href="#resume" class="hover:underline opacity-100">03 : Resume</a>
+                <a href="#skills" class="hover:underline opacity-100">04 : Stack</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION: 100% Bright & Vibrant Image -->
+    <section id="home" class="relative w-full h-[70vh] sm:h-[80vh] min-h-[500px] hero-bg-raw flex items-end sm:items-center justify-start pb-16 sm:pb-0 px-6 sm:px-12">
+        <div class="max-w-5xl mx-auto w-full pt-12">
+            <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight max-w-4xl leading-tight crisp-text-shadow">
+                <span>Hello, I am </span><span id="dynamicSuffix" class="typewriter-cursor"></span>
+            </h1>
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT CONTAINER -->
+    <main class="max-w-5xl mx-auto px-6 sm:px-8 py-16 space-y-20">
+
+        <!-- INTRO SECTION -->
+        <section id="about" class="grid grid-cols-1 md:grid-cols-12 gap-12 items-start border-b border-slate-200 pb-16">
+            
+            <!-- Bio Column -->
+            <div class="md:col-span-8 space-y-6">
+                <h2 class="mono-font text-2xl font-bold tracking-tight text-slate-900">
+                    Hi there!
+                </h2>
+                
+                <div class="space-y-4 text-slate-700 text-base leading-relaxed">
+                    <p>
+                        My name is Diana Kozlovska. I am a researcher and computer science student specializing in cybersecurity, telecommunications, and autonomous systems. I am currently studying at National University "Kyiv Aviation Institute" and Universidad de Cádiz as an Erasmus+ scholar, with an upcoming academic exchange at the University of Gothenburg in spring of 2027.
+                    </p>
+                    <p>
+                        My primary research centers on cyber-resilience for autonomous robotics and drones, post-quantum cryptographic transitions, quantum key distribution channel authentication, and smart radio system signal characteristics.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Links Column -->
+            <div class="md:col-span-4 space-y-6 border-t md:border-t-0 md:border-l border-slate-200 pt-8 md:pt-0 md:pl-8">
+                <h2 class="mono-font text-2xl font-bold tracking-tight text-slate-900">
+                    Links
+                </h2>
+
+                <div class="space-y-3.5 mono-font text-sm">
+                    <a href="https://github.com/diavalk" target="_blank" rel="noopener" class="flex items-center gap-3 text-slate-800 hover:text-blue-600 transition-colors group">
+                        <i data-lucide="github" class="w-5 h-5 text-slate-700 group-hover:text-blue-600"></i>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/diana-k-928a2a279/" target="_blank" rel="noopener" class="flex items-center gap-3 text-slate-800 hover:text-blue-600 transition-colors group">
+                        <i data-lucide="linkedin" class="w-5 h-5 text-slate-700 group-hover:text-blue-600"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="" class="flex items-center gap-3 text-slate-800 hover:text-blue-600 transition-colors group">
+                        <i data-lucide="mail" class="w-5 h-5 text-slate-700 group-hover:text-blue-600"></i>
+                        <span>Academic Email</span>
+                    </a>
+                    <a href="https://scholar.google.com/citations?view_op=list_works&hl=ru&authuser=3&user=20X63LsAAAAJ" target="_blank" rel="noopener" class="flex items-center gap-3 text-slate-800 hover:text-blue-600 transition-colors group">
+                        <i data-lucide="book-open" class="w-5 h-5 text-slate-700 group-hover:text-blue-600"></i>
+                        <span>Google Scholar</span>
+                    </a>
+                </div>
+
+                <div class="pt-4 text-xs text-slate-500 font-sans leading-normal">
+                    Feel free to reach out for research collaboration, open-source discussions, or academic inquiries.
+                </div>
+            </div>
+
+        </section>
+
+        <!-- 02 : RESEARCH & PUBLICATIONS -->
+        <section id="research" class="space-y-8 border-b border-slate-200 pb-16">
+            <div class="space-y-2">
+                <div class="mono-font text-xs uppercase tracking-widest text-slate-500">02 : Academic Work & Publications</div>
+                <h2 class="mono-font text-2xl sm:text-3xl font-bold text-slate-900">
+                    Research & Publications
+                </h2>
+            </div>
+
+            <div class="space-y-8">
+                <!-- Paper 1 -->
+                <div class="space-y-2.5">
+                    <div class="flex flex-wrap justify-between items-start gap-2">
+                        <h3 class="font-bold text-slate-900 text-base max-w-3xl">
+                            Trust-aware reliability-based aggregation framework for resilient federated learning in critical infrastructure systems
+                        </h3>
+                        <span class="mono-font text-xs text-slate-500 font-semibold">2026</span>
+                    </div>
+                    <div class="mono-font text-xs text-slate-600">
+                        Authors: <span class="text-slate-800">S Kudrenko, V Alkema, V Kozlovskyi, D Kozlovska</span>
+                    </div>
+                    <div class="mono-font text-xs text-slate-600">
+                        Venue: <span class="text-slate-800">CEUR Workshop Proceedings, 149-159</span>
+                    </div>
+                </div>
+
+                <hr class="border-slate-100">
+
+                <!-- Paper 2 -->
+                <div class="space-y-2.5">
+                    <div class="flex flex-wrap justify-between items-start gap-2">
+                        <h3 class="font-bold text-slate-900 text-base max-w-3xl">
+                            Sub-Cubic Quantum Gate Synthesis via Stochastic Commutator Decomposition
+                        </h3>
+                        <span class="mono-font text-xs text-slate-500 font-semibold">2026</span>
+                    </div>
+                    <div class="mono-font text-xs text-slate-600">
+                        Authors: <span class="text-slate-800">Y Kotukh</span>
+                    </div>
+                    <div class="mono-font text-xs text-slate-600">
+                        Venue: <span class="text-slate-800">arXiv preprint arXiv:2605.02051</span>
+                    </div>
+                </div>
+
+                <hr class="border-slate-100">
+
+                <!-- Paper 3 -->
+                <div class="space-y-2.5">
+                    <div class="flex flex-wrap justify-between items-start gap-2">
+                        <h3 class="font-bold text-slate-900 text-base max-w-3xl">
+                            Problems and prospects of building authentication methods in quantum key distribution channels
+                        </h3>
+                        <span class="mono-font text-xs text-slate-500 font-semibold">2026</span>
+                    </div>
+                    <div class="mono-font text-xs text-slate-600">
+                        Authors: <span class="text-slate-800">YV Kotukh, MV Korobchynskyi, VV Kozlovskyi, HZ Khalimov, D Kozlovska et al.</span>
+                    </div>
+                    <div class="mono-font text-xs text-slate-600">
+                        Venue: <span class="text-slate-800">Radiotekhnika, 93-98</span>
+                    </div>
+                </div>
+
+                <hr class="border-slate-100">
+
+                <!-- Paper 4 -->
+                <div class="space-y-2.5">
+                    <div class="flex flex-wrap justify-between items-start gap-2">
+                        <h3 class="font-bold text-slate-900 text-base max-w-3xl">
+                            The Influence of Higher Harmonics on the Accuracy of Power Measurement and the Security of Computer and Radio Systems
+                        </h3>
+                        <span class="mono-font text-xs text-slate-500 font-semibold">2026</span>
+                    </div>
+                    <div class="mono-font text-xs text-slate-600">
+                        Authors: <span class="text-slate-800">V Kot, V Kozlovskyi, V Stadnik, T Milevska, D Kozlovska, R Vegiiev</span>
+                    </div>
+                    <div class="mono-font text-xs text-slate-600">
+                        Venue: <span class="text-slate-800">2026 8th International Congress on Human-Computer Interaction, Optimization and Robotic Applications (ICHORA)</span>
+                    </div>
+                </div>
+
+                <hr class="border-slate-100">
+
+                <!-- Paper 5 -->
+                <div class="space-y-2.5">
+                    <div class="flex flex-wrap justify-between items-start gap-2">
+                        <h3 class="font-bold text-slate-900 text-base max-w-3xl">
+                            Методика оцінки та зниження кіберризиків супутникових каналів зв’язку Starlink в інформаційній інфраструктурі авіаційних підприємств
+                        </h3>
+                        <span class="mono-font text-xs text-slate-500 font-semibold">2026</span>
+                    </div>
+                    <div class="mono-font text-xs text-slate-600">
+                        Authors: <span class="text-slate-800">ІБ Зарубінська, ВЮ Білоненко, ІЮ Костюк, ДВ Козловська, ДМ Хвищун</span>
+                    </div>
+                    <div class="mono-font text-xs text-slate-600">
+                        Venue: <span class="text-slate-800">КОМП’ЮТЕРНО-ІНТЕГРОВАНІ ТЕХНОЛОГІЇ: ОСВІТА, НАУКА, ВИРОБНИЦТВО, 354-363</span>
+                    </div>
+                </div>
+
+                <hr class="border-slate-100">
+
+                <!-- Paper 6 -->
+                <div class="space-y-2.5">
+                    <div class="flex flex-wrap justify-between items-start gap-2">
+                        <h3 class="font-bold text-slate-900 text-base max-w-3xl">
+                            A Formal Methodology for Workload-Driven Comparative Evaluation of Cloud Infrastructure Architectures
+                        </h3>
+                        <span class="mono-font text-xs text-slate-500 font-semibold">2026</span>
+                    </div>
+                    <div class="mono-font text-xs text-slate-600">
+                        Authors: <span class="text-slate-800">Valeriy Kozlovskiy, Yurii Lysetskyi, Nikita Bakun, Diana Kozlovska</span>
+                    </div>
+                    <div class="mono-font text-xs text-slate-600">
+                        Venue: <span class="text-slate-800">Indonesian Journal of Electrical Engineering and Informatics (IJEEI)</span>
+                    </div>
+                </div>
+
+                <hr class="border-slate-100">
+
+                <!-- Paper 7 -->
+                <div class="space-y-2.5">
+                    <div class="flex flex-wrap justify-between items-start gap-2">
+                        <h3 class="font-bold text-slate-900 text-base max-w-3xl">
+                            ОБГРУНТУВАННЯ ПАРАМЕТРІВ ЕКРАНУЮЧИХ КОНСТРУКЦІЙ ДЛЯ ПРОТИДІЇ TEMPEST-ЗАГРОЗАМ
+                        </h3>
+                        <span class="mono-font text-xs text-slate-500 font-semibold">2025</span>
+                    </div>
+                    <div class="mono-font text-xs text-slate-600">
+                        Authors: <span class="text-slate-800">ВВ Козловский, ЮВ Баланюк, ДВ Козловська, НС Вишневська</span>
+                    </div>
+                    <div class="mono-font text-xs text-slate-600">
+                        Venue: <span class="text-slate-800">Science-Based Technologies 68 (4), 435</span>
+                    </div>
+                </div>
+
+                <hr class="border-slate-100">
+
+                <!-- Paper 8 -->
+                <div class="space-y-2.5">
+                    <div class="flex flex-wrap justify-between items-start gap-2">
+                        <h3 class="font-bold text-slate-900 text-base max-w-3xl">
+                            ОГЛЯД МОЖЛИВОСТЕЙ IDS ДЛЯ АНАЛІЗУ МЕРЕЖЕВОГО ТРАФІКУ
+                        </h3>
+                        <span class="mono-font text-xs text-slate-500 font-semibold">2025</span>
+                    </div>
+                    <div class="mono-font text-xs text-slate-600">
+                        Authors: <span class="text-slate-800">V Storozenko, B Demianchuk, D Kozlovska, A Fesenko</span>
+                    </div>
+                    <div class="mono-font text-xs text-slate-600">
+                        Venue: <span class="text-slate-800">Science-based technologies 67 (3), 317-324</span>
+                    </div>
+                </div>
+
+                <hr class="border-slate-100">
+
+                <!-- Paper 9 -->
+                <div class="space-y-2.5">
+                    <div class="flex flex-wrap justify-between items-start gap-2">
+                        <h3 class="font-bold text-slate-900 text-base max-w-3xl">
+                            РОЗРОБКА ЛАНЦЮГОВИХ МОДЕЛЕЙ НЕРЕГУЛЯРНИХ ПРОТИРАДІОЛОКАЦІЙНИХ ПОКРИТТІВ
+                        </h3>
+                        <span class="mono-font text-xs text-slate-500 font-semibold">2025</span>
+                    </div>
+                    <div class="mono-font text-xs text-slate-600">
+                        Authors: <span class="text-slate-800">V Kozlovsky, V Pavlov, D Kozlovska, S Kudrenko</span>
+                    </div>
+                    <div class="mono-font text-xs text-slate-600">
+                        Venue: <span class="text-slate-800">Ukrainian Information Security Research Journal 27 (1), 48-56</span>
+                    </div>
+                </div>
+
+                <hr class="border-slate-100">
+
+                <!-- Paper 10 -->
+                <div class="space-y-2.5">
+                    <div class="flex flex-wrap justify-between items-start gap-2">
+                        <h3 class="font-bold text-slate-900 text-base max-w-3xl">
+                            Електромагнітне екранування як спосіб захисту технічних засобів обробки даних від витоків інформації
+                        </h3>
+                        <span class="mono-font text-xs text-slate-500 font-semibold">2025</span>
+                    </div>
+                    <div class="mono-font text-xs text-slate-600">
+                        Authors: <span class="text-slate-800">ВВ Козловський, ЮВ Баланюк, БМ Залевський, ДВ Козловська</span>
+                    </div>
+                    <div class="mono-font text-xs text-slate-600">
+                        Venue: <span class="text-slate-800">Ukrainian Scientific Journal of Information Security 31 (2), 74-79</span>
+                    </div>
+                </div>
+
+                <hr class="border-slate-100">
+
+                <!-- Paper 11 -->
+                <div class="space-y-2.5">
+                    <div class="flex flex-wrap justify-between items-start gap-2">
+                        <h3 class="font-bold text-slate-900 text-base max-w-3xl">
+                            Adaptive route formation in dynamic networks using genetic and differential evolution techniques
+                        </h3>
+                        <span class="mono-font text-xs text-slate-500 font-semibold">2025</span>
+                    </div>
+                    <div class="mono-font text-xs text-slate-600">
+                        Authors: <span class="text-slate-800">S Kudrenko, A Stoliar, V Alkema, V Kozlovskyi, D Kozlovska</span>
+                    </div>
+                    <div class="mono-font text-xs text-slate-600">
+                        Venue: <span class="text-slate-800">CH&CMiGIN / Conference Proceedings</span>
+                    </div>
+                </div>
+
+                <hr class="border-slate-100">
+
+                <!-- Paper 12 -->
+                <div class="space-y-2.5">
+                    <div class="flex flex-wrap justify-between items-start gap-2">
+                        <h3 class="font-bold text-slate-900 text-base max-w-3xl">
+                            МЕТОД ВИЗНАЧЕННЯ МАТРИЦІ ОПОРІВ ЛІНІЇ ЗІ ЗМІННИМ ПО ДОВЖИНІ ХВИЛЬОВИМ ОПОРОМ
+                        </h3>
+                        <span class="mono-font text-xs text-slate-500 font-semibold">2025</span>
+                    </div>
+                    <div class="mono-font text-xs text-slate-600">
+                        Authors: <span class="text-slate-800">ВО Фесенко, ДВ Козловська, НС Вишневська</span>
+                    </div>
+                    <div class="mono-font text-xs text-slate-600">
+                        Venue: <span class="text-slate-800">Science-Based Technologies 65 (1), 93</span>
+                    </div>
+                </div>
+
+                <hr class="border-slate-100">
+
+                <!-- Paper 13 -->
+                <div class="space-y-2.5">
+                    <div class="flex flex-wrap justify-between items-start gap-2">
+                        <h3 class="font-bold text-slate-900 text-base max-w-3xl">
+                            КЕРУВАННЯ ІНФОРМАЦІЙНИМИ ПОТОКАМИ У СИСТЕМІ КІБЕРЗАХИСТУ
+                        </h3>
+                        <span class="mono-font text-xs text-slate-500 font-semibold">2025</span>
+                    </div>
+                    <div class="mono-font text-xs text-slate-600">
+                        Authors: <span class="text-slate-800">A Fesenko, N Vyshnevska, D Kozlovska</span>
+                    </div>
+                    <div class="mono-font text-xs text-slate-600">
+                        Venue: <span class="text-slate-800">Ukrainian Information Security Research Journal 26 (2)</span>
+                    </div>
+                </div>
+
+                <hr class="border-slate-100">
+
+                <!-- Paper 14 -->
+                <div class="space-y-2.5">
+                    <div class="flex flex-wrap justify-between items-start gap-2">
+                        <h3 class="font-bold text-slate-900 text-base max-w-3xl">
+                            БІНАРНА МОДЕЛЬ ЦІЛЬОВОЇ ФУНКЦІЇ РАДІОТЕХНІЧНИХ СИСТЕМ
+                        </h3>
+                        <span class="mono-font text-xs text-slate-500 font-semibold">2024</span>
+                    </div>
+                    <div class="mono-font text-xs text-slate-600">
+                        Authors: <span class="text-slate-800">ОВ Іванов, ДВ Козловська, ММ Євсюк, ЯМ Мельник</span>
+                    </div>
+                    <div class="mono-font text-xs text-slate-600">
+                        Venue: <span class="text-slate-800">Science-Based Technologies 64 (4), 345</span>
+                    </div>
+                </div>
+
+                <hr class="border-slate-100">
+
+                <!-- Paper 15 -->
+                <div class="space-y-2.5">
+                    <div class="flex flex-wrap justify-between items-start gap-2">
+                        <h3 class="font-bold text-slate-900 text-base max-w-3xl">
+                            EVALUATING THE IMPACT OF CROSS-CORRELATION PROPERTIES OF COMPLEX SIGNALS ON THE CHARACTERISTICS OF SMART RADIO SYSTEMS
+                        </h3>
+                        <span class="mono-font text-xs text-slate-500 font-semibold">2024</span>
+                    </div>
+                    <div class="mono-font text-xs text-slate-600">
+                        Authors: <span class="text-slate-800">D Kozlovska, O Komar, D Chyrva, A Sorokun</span>
+                    </div>
+                    <div class="mono-font text-xs text-slate-600">
+                        Venue: <span class="text-slate-800">Science-Based Technologies 61 (1), 21</span>
+                    </div>
+                </div>
+
+                <hr class="border-slate-100">
+
+                <!-- Paper 16 -->
+                <div class="space-y-2.5">
+                    <div class="flex flex-wrap justify-between items-start gap-2">
+                        <h3 class="font-bold text-slate-900 text-base max-w-3xl">
+                            EXPERIMENTAL STUDY OF A PROBABILISTIC CYBERATTACK DETECTION MODEL WITH MARKOV PROPERTY
+                        </h3>
+                        <span class="mono-font text-xs text-slate-500 font-semibold">2025</span>
+                    </div>
+                    <div class="mono-font text-xs text-slate-600">
+                        Authors: <span class="text-slate-800">N Vyshnevska, V Kozlovskyi, Y Lystskyi, S Kudrenko, D Kozlovska</span>
+                    </div>
+                    <div class="mono-font text-xs text-slate-600">
+                        Venue: <span class="text-slate-800">Krakow, 41</span>
+                    </div>
+                </div>
+
+                <div class="pt-4">
+                    <a href="https://scholar.google.com/citations?view_op=list_works&hl=ru&authuser=3&user=20X63LsAAAAJ" target="_blank" rel="noopener" class="mono-font text-xs text-blue-600 hover:underline inline-flex items-center gap-1 font-bold">
+                        <span>View complete publication profile on Google Scholar →</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 03 : EDUCATION & JOURNEY -->
+        <section id="resume" class="space-y-8 border-b border-slate-200 pb-16">
+            <div class="space-y-2">
+                <div class="mono-font text-xs uppercase tracking-widest text-slate-500">03 : Academic History</div>
+                <h2 class="mono-font text-2xl sm:text-3xl font-bold text-slate-900">
+                    Education & Mobility
+                </h2>
+            </div>
+
+            <div class="space-y-8 border-l-2 border-slate-200 pl-6 ml-2">
+                <!-- Edu 1 -->
+                <div class="space-y-1 relative">
+                    <div class="absolute -left-[31px] top-1.5 w-3 h-3 rounded-full bg-slate-900"></div>
+                    <div class="flex flex-wrap justify-between items-baseline">
+                        <h3 class="font-bold text-slate-900 text-base">University of Gothenburg</h3>
+                        <span class="mono-font text-xs text-slate-500">Gothenburg, Sweden • Spring 2027</span>
+                    </div>
+                    <div class="mono-font text-xs text-blue-600">Incoming Exchange Student | Dept. of Earth Sciences</div>
+                </div>
+
+                <!-- Edu 2 -->
+                <div class="space-y-1 relative">
+                    <div class="absolute -left-[31px] top-1.5 w-3 h-3 rounded-full bg-slate-400"></div>
+                    <div class="flex flex-wrap justify-between items-baseline">
+                        <h3 class="font-bold text-slate-900 text-base">Universidad de Cádiz (UCA)</h3>
+                        <span class="mono-font text-xs text-slate-500">Cádiz, Spain • 2025 – 2026</span>
+                    </div>
+                    <div class="mono-font text-xs text-blue-600">Erasmus+ Exchange Scholar | Telecommunications & Engineering</div>
+                </div>
+
+                <!-- Edu 3 -->
+                <div class="space-y-1 relative">
+                    <div class="absolute -left-[31px] top-1.5 w-3 h-3 rounded-full bg-slate-400"></div>
+                    <div class="flex flex-wrap justify-between items-baseline">
+                        <h3 class="font-bold text-slate-900 text-base">National University "Kyiv Aviation Institute"</h3>
+                        <span class="mono-font text-xs text-slate-500">Kyiv, Ukraine</span>
+                    </div>
+                    <div class="mono-font text-xs text-blue-600">Computer Science, Cybersecurity & Telecommunications</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 04 : SKILLS & STACK -->
+        <section id="skills" class="space-y-8 pb-12">
+            <div class="space-y-2">
+                <div class="mono-font text-xs uppercase tracking-widest text-slate-500">04 : Tooling & Frameworks</div>
+                <h2 class="mono-font text-2xl sm:text-3xl font-bold text-slate-900">
+                    Technical Stack
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mono-font text-xs">
+                <div class="bg-slate-50 border border-slate-200 p-4 rounded space-y-3">
+                    <div class="font-bold text-slate-900 border-b border-slate-200 pb-2">SECURITY</div>
+                    <ul class="space-y-1.5 text-slate-700">
+                        <li>• Isolation Forest IDS</li>
+                        <li>• MAVLink / ROS2</li>
+                        <li>• Wireshark / PCAP</li>
+                        <li>• DNSSEC / DNS</li>
+                        <li>• QKD Authentication</li>
+                    </ul>
+                </div>
+
+                <div class="bg-slate-50 border border-slate-200 p-4 rounded space-y-3">
+                    <div class="font-bold text-slate-900 border-b border-slate-200 pb-2">AI / ML</div>
+                    <ul class="space-y-1.5 text-slate-700">
+                        <li>• PyTorch</li>
+                        <li>• StarDist (Microscopy)</li>
+                        <li>• Scikit-learn</li>
+                        <li>• NumPy / Pandas</li>
+                        <li>• OpenCV</li>
+                    </ul>
+                </div>
+
+                <div class="bg-slate-50 border border-slate-200 p-4 rounded space-y-3">
+                    <div class="font-bold text-slate-900 border-b border-slate-200 pb-2">DEVOPS & INFRA</div>
+                    <ul class="space-y-1.5 text-slate-700">
+                        <li>• Docker / Containers</li>
+                        <li>• FastAPI / Python</li>
+                        <li>• Linux / Bash</li>
+                        <li>• Git / Actions</li>
+                        <li>• Cloud Architectures</li>
+                    </ul>
+                </div>
+
+                <div class="bg-slate-50 border border-slate-200 p-4 rounded space-y-3">
+                    <div class="font-bold text-slate-900 border-b border-slate-200 pb-2">LANGUAGES</div>
+                    <ul class="space-y-1.5 text-slate-700">
+                        <li>• English (Fluent)</li>
+                        <li>• Ukrainian (Native)</li>
+                        <li>• Spanish B2</li>
+                        <li>• German B1</li>
+                        <li>• Italian A2</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-slate-200 py-8 text-center text-xs text-slate-500 mono-font">
+        <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div>© Diana Kozlovska</div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Typewriter Animation -->
+    <script>
+        lucide.createIcons();
+
+        const suffixes = [
+            "Diana Kozlovska",
+            "an engineer and researcher",
+            "a hiker, cyclist, dog lover, book worm and runner"
+        ];
+
+        let suffixIdx = 0;
+        let charIdx = 0;
+        let isDeleting = false;
+        const dynamicSuffixEl = document.getElementById("dynamicSuffix");
+        
+        const typingSpeed = 85;
+        const deletingSpeed = 40;
+        const pauseTime = 2200;
+
+        function typeLoop() {
+            const currentSuffix = suffixes[suffixIdx];
+            
+            if (isDeleting) {
+                charIdx--;
+                dynamicSuffixEl.textContent = currentSuffix.substring(0, charIdx);
+            } else {
+                charIdx++;
+                dynamicSuffixEl.textContent = currentSuffix.substring(0, charIdx);
+            }
+
+            if (!isDeleting && charIdx === currentSuffix.length) {
+                setTimeout(() => { isDeleting = true; typeLoop(); }, pauseTime);
+            } else if (isDeleting && charIdx === 0) {
+                isDeleting = false;
+                suffixIdx = (suffixIdx + 1) % suffixes.length;
+                setTimeout(typeLoop, 300);
+            } else {
+                setTimeout(typeLoop, isDeleting ? deletingSpeed : typingSpeed);
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            typeLoop();
+        });
+    </script>
+</body>
+</html>
